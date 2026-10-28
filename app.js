@@ -91,6 +91,13 @@ app.use("/listing", listingRouter);
 app.use("/listing/:id/reviews", reviewRouter);
 app.use('/', userRouter);
 
+
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
+
+
 // ===============================
 // 404 ROUTE
 // ===============================
@@ -116,9 +123,7 @@ app.use((err, req, res, next) => {
   res.status(status).render("err.ejs", { message });
 });
 
-app.get("/", (req, res) => {
-    res.redirect("/listings");
-});
+
 
 // ===============================
 // DATABASE CONNECTION + START SERVER
