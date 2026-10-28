@@ -116,6 +116,10 @@ app.use((err, req, res, next) => {
   res.status(status).render("err.ejs", { message });
 });
 
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
 // ===============================
 // DATABASE CONNECTION + START SERVER
 // ===============================
