@@ -93,7 +93,7 @@ app.use('/', userRouter);
 
 
 app.get("/", (req, res) => {
-    res.redirect("/listings");
+    res.redirect("/listing");
 });
 
 
