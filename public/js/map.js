@@ -1,7 +1,7 @@
   
-   mapboxgl.accessToken  = maptoken
+   mapboxgl.accessToken  = mapToken;
     const map = new mapboxgl.Map({
-        accessToken: process.env.MAP_KEY,
+        
         container: 'map',
         style: 'mapbox://styles/mapbox/standard', // Use the standard style for the map
         projection: 'globe', // display the map as a globe
