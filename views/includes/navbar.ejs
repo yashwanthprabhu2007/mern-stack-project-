@@ -1,0 +1,55 @@
+<% const currentSearch = typeof searchQuery !== 'undefined' ? searchQuery : ''; %>
+<nav class="navbar navbar-expand-md bg-body-light  border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listing"><i class="fa-brands fa-airbnb"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+       
+        <a class="nav-link" href="/listing">Explore</a>
+        <a class="nav-link" href="/listing/new">Create new</a>
+        
+        
+      </div>
+        <div class="mx-auto">
+
+                <form class="d-flex" role="search" id="searchForm">
+                    <input 
+                  class="form-control me-2" 
+                 type="search" 
+                   id="searchInput" 
+                   placeholder="Search by country" 
+                    aria-label="Search"   
+                         value="<%= currentSearch %>" 
+                         name="search"
+                           >
+  <button class="btn btn-outline-danger" type="submit">Search</button>
+</form>
+        </div>
+
+<div class="navbar-nav ms-auto align-items-center gap-2">
+  <% if (!currUser) { %>
+
+    <a class="btn btn-outline-dark btn-sm rounded-pill px-3" href="/login"><b>Login</b></a>
+    <a class="btn btn-outline-dark btn-sm rounded-pill px-3" href="/signup"><b>Sign up</b></a>
+
+  <% } else { %>
+
+    <span class="nav-link disabled text-muted small mb-0">
+      Hi, <%= currUser.username %>
+    </span>
+
+    <form action="/logout" method="POST" class="d-inline m-0">
+      <button type="submit" class="btn btn-danger btn-sm rounded-pill px-3">
+        Logout
+      </button>
+    </form>
+
+  <% } %>
+
+</div>
+    </div>
+  </div>
+</nav>

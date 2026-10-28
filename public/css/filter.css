@@ -1,0 +1,71 @@
+  * { box-sizing: border-box; }
+
+  #filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1.5rem 2.5rem;
+    padding: 0 0 2rem;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+
+    background: none;
+    border: none;
+    padding: 0.25rem 0;
+    font: inherit;
+    color: #6b6b6b;
+    cursor: pointer;
+
+    transition: color 0.15s ease, border-color 0.15s ease;
+    border-bottom: 2px solid transparent;
+  }
+
+  .filter i {
+    font-size: 1.1rem;
+  }
+
+  .filter p {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .filter:hover {
+    color: #222;
+  }
+
+  .filter:focus-visible {
+    outline: 2px solid #222;
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
+  .filter.active {
+    color: #222;
+    border-bottom-color: #222;
+  }
+
+  @media (max-width: 768px) {
+    #filters { gap: 1rem 1.5rem; }
+    .filter i { font-size: 0.95rem; }
+    .filter p { font-size: 0.75rem; }
+  }
+
+  @media (max-width: 576px) {
+    #filters { gap: 0.8rem 1rem; }
+    .filter i { font-size: 0.85rem; }
+    .filter p { font-size: 0.7rem; }
+  }
+
+ #tax{
+      border: 1px solid black;
+      padding: 1rem 3rem 1rem 1rem;
+      border-radius: 1rem;
+      

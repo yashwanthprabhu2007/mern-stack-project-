@@ -1,0 +1,32 @@
+// Listing Schema Validation using Joi for server side validation
+const Joi = require("joi");
+
+module.exports.listingSchema = Joi.object({
+  listing: Joi.object({
+    tittle: Joi.string().required(),
+    description: Joi.string().required(),
+    image: Joi.string().allow("", null),
+    price: Joi.number().required().min(0),
+    location: Joi.string().required(),
+    category: Joi.string()
+      .valid(
+        "Surfing",
+        "Trending",
+        "Mountain",
+        "Pool",
+        "Camping",
+        "Farm",
+        "Arctic",
+      )
+      .required(),
+  }).required(),
+});
+
+// Review Schema Validation using Joi for server side validation x
+
+module.exports.reviewSchema = Joi.object({
+  review: Joi.object({
+    rating: Joi.number().required(),
+    comment: Joi.string().required(),
+  }).required(),
+});

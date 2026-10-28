@@ -1,0 +1,32 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-md-6 col-lg-5">
+
+      <h1 class="text-center mb-4">Login For Booking.com</h1>
+
+      <form action="/login" method="post" class="needs-validation" novalidate>
+
+        
+
+        <div class="mb-3">
+          <label for="username" class="form-label">username</label>
+          <input type="text" name="username" id="username" class="form-control" required>
+          <div class="invalid-feedback">Please provide a valid username.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" id="password" class="form-control" required>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please provide a password.</div>
+        </div>
+
+        <button class="btn btn-success">login</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>

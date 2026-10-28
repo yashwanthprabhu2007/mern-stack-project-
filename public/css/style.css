@@ -1,0 +1,169 @@
+/* ================================
+   GLOBAL / BODY
+   ================================ */
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+/* ================================
+   NAVBAR
+   ================================ */
+.navbar {
+  height: 5rem;
+  background-color: white;
+}
+
+.fa-airbnb {
+  font-size: 2rem;
+  color: #f31414;
+}
+
+.nav-link {
+  color: black !important;
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.f-social-media,
+.f-company,
+.f-company-info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  text-decoration: none;
+  text-align: center;
+  align-content: center;
+  height: 2rem;
+}
+
+.f-company-info ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  color: black;
+  text-align: center;
+  align-content: center;
+}
+
+.f-company-info a,
+.f-social-media a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.f-company-info a:hover {
+  text-decoration: underline;
+}
+
+.f-social-media {
+  font-size: 1.3rem;
+}
+
+.f-company {
+  padding: 0.5rem 0 25px 0;
+}
+
+/* ================================
+   CARDS
+   ================================ */
+.listing-card {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden; /* clips the image to rounded corners */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: whitesmoke;
+}
+
+/* Show page image */
+.show-img {
+  height: 30vh;
+}
+
+/* ================================
+   FORMS & BUTTONS
+   ================================ */
+.form-control,
+.form-range,
+.btn {
+  border-radius: 0.5rem;
+}
+
+/* ================================
+   FOOTER ICON HOVER
+   ================================ */
+.f-social-media a {
+  border-radius: 50%;
+  padding: 0.4rem;
+  transition: background-color 0.2s ease;
+}
+
+.f-social-media a:hover {
+  background-color: #f2f2f2;
+}
+
+/* ================================
+   CARD TYPOGRAPHY (Inter)
+   ================================ */
+.card-title-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.2px;
+  color: #222;
+  margin-bottom: 0.25rem;
+}
+
+.card-price-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #222;
+  margin-bottom: 0;
+  transition: color 0.2s ease; /* pink accent on hover */
+}
+
+.card:hover .card-price-text {
+  color: #ff385c;
+}
+
+.price-unit {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: #717171;
+}
+
+

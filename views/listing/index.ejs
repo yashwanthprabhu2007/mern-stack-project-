@@ -1,0 +1,108 @@
+<% layout("/layouts/boilerplate") %> 
+
+<div id="filters" role="tablist" aria-label="Filter listings">
+<button class="filter <%= activeCategory === 'Surfing' ? 'active' : '' %>"
+        aria-pressed="<%= activeCategory === 'Surfing' %>"
+        onclick="filterCategory('Surfing')">
+  <i class="fa-solid fa-sailboat" aria-hidden="true"></i>
+  <p>Surfing</p>
+</button>
+
+<button class="filter <%= activeCategory === 'Trending' ? 'active' : '' %>"
+        aria-pressed="<%= activeCategory === 'Trending' %>"
+        onclick="filterCategory('Trending')">
+  <i class="fa-solid fa-fire" aria-hidden="true"></i>
+  <p>Trending</p>
+</button>
+
+<button class="filter <%= activeCategory === 'Mountain' ? 'active' : '' %>"
+        aria-pressed="<%= activeCategory === 'Mountain' %>"
+        onclick="filterCategory('Mountain')">
+  <i class="fa-solid fa-mountain-city" aria-hidden="true"></i>
+  <p>Mountain</p>
+</button>
+
+<button class="filter <%= activeCategory === 'Pool' ? 'active' : '' %>"
+        aria-pressed="<%= activeCategory === 'Pool' %>"
+        onclick="filterCategory('Pool')">
+  <i class="fa-solid fa-person-swimming" aria-hidden="true"></i>
+  <p>Amazing Pools</p>
+</button>
+
+<button class="filter <%= activeCategory === 'Camping' ? 'active' : '' %>"
+        aria-pressed="<%= activeCategory === 'Camping' %>"
+        onclick="filterCategory('Camping')">
+  <i class="fa-solid fa-campground" aria-hidden="true"></i>
+  <p>Camping</p>
+</button>
+
+<button class="filter <%= activeCategory === 'Farm' ? 'active' : '' %>"
+        aria-pressed="<%= activeCategory === 'Farm' %>"
+        onclick="filterCategory('Farm')">
+  <i class="fa-solid fa-tractor" aria-hidden="true"></i>
+  <p>Farm</p>
+</button>
+
+<button class="filter <%= activeCategory === 'Arctic' ? 'active' : '' %>"
+        aria-pressed="<%= activeCategory === 'Arctic' %>"
+        onclick="filterCategory('Arctic')">
+  <i class="fa-regular fa-snowflake" aria-hidden="true"></i>
+  <p>Arctic</p>
+</button>
+
+<!-- optional reset -->
+<button class="filter <%= !activeCategory ? 'active' : '' %>"
+        aria-pressed="<%= !activeCategory %>"
+        onclick="window.location.href='/listing'">
+  <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+  <p>All</p>
+</button>
+<div class="form-check-reverse form-switch ms-auto" id="tax">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
+  <label class="form-check-label" for="flexSwitchCheckChecked">Display After tax</label>
+</div>
+</div>
+
+
+<script src="/js/filter.js">
+  
+
+
+
+</script>
+
+
+<body>
+
+  <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 g-4">
+    <% for (let list of allList) { %>
+      <div class="col">
+        <a href="/listing/<%= list._id %>" class="text-decoration-none">
+          <div class="card h-100 listing-card">
+            <img
+              src="<%= list.image.url %>"
+              class="card-img-top"
+              alt="img"
+              style="height: 20rem; object-fit: cover;"
+            />
+            <div class="card-img-overlay"></div>
+
+            <div class="card-body">
+              <h5 class="card-title card-title-text">
+                <%= list.tittle %>
+              </h5>
+
+              <p class="card-text card-price-text">
+                  ₹ <span class="price-value" data-base-price="<%= list.price %>">
+                    <%= list.price.toLocaleString('en-IN') %>
+                     </span>
+                   <span class="price-unit">/ night</span>
+                </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    <% } %>
+  </div>
+
+</body>
